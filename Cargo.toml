@@ -1,0 +1,19 @@
+[package]
+name = "kalman-fixed-agnostic"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jorge Andre Castro <georgeandrec@gmail.com>"]
+license = "GPL-2.0-or-later"
+description = "Filtre de Kalman adaptatif en virgule fixe pour systèmes embarqués `no_std`, zéro dépendance"
+repository = "https://github.com/jorgeandrecastro/kalman-fixed-agnostic"
+documentation = "https://docs.rs/kalman-fixed-agnostic"
+readme = "README.md"
+keywords = ["fixed-point", "kalman", "no-std", "filter", "embedded"]
+categories = ["mathematics", "no-std", "embedded"]
+
+[profile.release]
+opt-level = "z"      # Optimisation pour la taille minimale du binaire
+lto = true           # Link-Time Optimization pour de meilleures performances
+codegen-units = 1
+panic = "abort"      # Indispensable pour un environnement sans OS (no_std)
+strip = true         # Nettoyage des symboles pour réduire le poids
