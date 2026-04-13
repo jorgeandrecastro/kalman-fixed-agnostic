@@ -219,7 +219,7 @@ async fn main(spawner: Spawner) {
     }
 }
 
-'''
+```
 
 Cet exmple utilise mes autres crates vous avez donc une vue d'ensemble La oled , le capteur et le filtre de Kalman :)
 
