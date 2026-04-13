@@ -19,7 +19,7 @@ Filtre de Kalman adaptatif en virgule fixe pour systèmes embarqués `no_std`.
 
 ```toml
 [dependencies]
-kalman-fixed-agnostic = "0.1.0"
+kalman-fixed-agnostic = "0.1.1"
 ```
 
 ```rust
