@@ -70,8 +70,7 @@
 #![no_std]
 
 /// Taille de la fenêtre glissante pour le calcul de la variance dynamique.
-const WINDOW: usize = 10;
-
+ pub const WINDOW: usize = 10;
 /// Filtre de Kalman adaptatif en virgule fixe Q16.16.
 ///
 /// Le paramètre de bruit de mesure R est calculé dynamiquement à partir
