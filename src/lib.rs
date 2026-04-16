@@ -68,6 +68,7 @@
 //! ```
 
 #![no_std]
+#![forbid(unsafe_code)]
 
 /// Taille de la fenêtre glissante pour le calcul de la variance dynamique.
  pub const WINDOW: usize = 10;
@@ -96,7 +97,7 @@ impl AgnosticKalman {
     ///
     /// # Arguments
     ///
-    /// * `initial_value` — Valeur initiale de l'état (en unités capteur, `i32`)
+    /// * `initial_value` Valeur initiale de l'état (en unités capteur, `i32`)
     /// * `q` — Bruit de processus : confiance dans la stabilité du système.
     ///   Un `q` faible (ex. `1`) produit un filtre très lisse (réponse lente aux
     ///   changements). Un `q` élevé (ex. `100`) suit plus agressivement les mesures.
@@ -154,7 +155,7 @@ impl AgnosticKalman {
     ///
     /// # Arguments
     ///
-    /// * `measurement` — Valeur brute du capteur (`i32`)
+    /// * `measurement`  Valeur brute du capteur (`i32`)
     ///
     /// # Retour
     ///
@@ -176,10 +177,10 @@ impl AgnosticKalman {
             self.is_warm = true;
         }
 
-        // --- Calcul du paramètre R adaptatif ---
+        // Calcul du paramètre R adaptatif 
         let r = self.calculate_dynamic_r();
 
-        // ÉTAPE 1 : PRÉDICTION — modèle à vitesse constante nulle
+        // ÉTAPE 1 : PRÉDICTION  modèle à vitesse constante nulle
         // P ← P + Q
         self.p = self.p.saturating_add(self.q);
 

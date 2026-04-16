@@ -6,6 +6,9 @@
 
 Filtre de Kalman adaptatif en virgule fixe pour systèmes embarqués `no_std`.
 
+# Update Version 0.2.0
+#![forbid(unsafe_code)] pour empecher le code  unsafe.
+
 ## Caractéristiques
 
 - `#![no_std]` — aucune dépendance à la bibliothèque standard
